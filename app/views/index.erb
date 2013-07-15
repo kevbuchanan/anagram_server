@@ -1,5 +1,10 @@
 <div class="container">
   <h1>Welcome to Anagrams!</h1>
-
+  
   <h2>Anagrams for "<%= @word.word %>"</h2>
+  <ul class = "anagrams">
+    <% @word.anagrams.each do |anagram| %>
+      <li><%= anagram %></li>
+    <% end %>
+  </ul>
 </div>
