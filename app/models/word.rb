@@ -1,11 +1,9 @@
 class Word < ActiveRecord::Base
-  
-  def canonical
+  def generate_canonical
     self.word.split(//).sort.join
   end
 
-
   def anagrams
-    Word.where()
+    Word.where("canonical = ?", self.canonical)
   end
 end

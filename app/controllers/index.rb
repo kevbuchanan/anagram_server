@@ -4,6 +4,6 @@ get '/' do
 end
 
 get '/:word' do
-  @word = params[:word]
+  @word = Word.find_by_word(params[:word])
   erb :index
 end
